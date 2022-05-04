@@ -43,8 +43,15 @@ const showOneBlog = async (req, res) => {
 // update blog
 const updateBlog = async (req, res) => {
     try {
+        const one ={
+            thumbnail: req.file.path,
+            title: req.body.title,
+            description: req.body.description,
+            author: req.body.author,
+        }
+        console.log(req.body,one)
         const _id = req.params.id
-        const data = await Blog.findByIdAndUpdate(_id, req.body, {
+        const data = await Blog.findByIdAndUpdate(_id, one, {
             new: true
         });
         if (!_id) { res.status(400).send() }

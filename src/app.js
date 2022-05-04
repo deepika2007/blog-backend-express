@@ -26,7 +26,7 @@ app.set("view engine", "ejs");// Set EJS as templating engine
 app.post('/blog', upload.single('thumbnail'),createBlog)
 app.get('/blog', showAllBlog)
 app.get('/blog/:id', showOneBlog)
-app.put('/blog/:id',updateBlog)
+app.put('/blog/:id',upload.single('thumbnail'),updateBlog)
 app.delete('/blog/:id', deleteBlog)
 
 
