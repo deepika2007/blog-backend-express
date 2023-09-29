@@ -18,7 +18,6 @@ var upload = multer({
             callback(null,file, true)
         // }
         // else {
-        //     console.log('only jpg and png')
         //     callback(null, false)
         // }
     }
